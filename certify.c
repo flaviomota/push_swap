@@ -6,7 +6,7 @@
 /*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 14:51:33 by fmota             #+#    #+#             */
-/*   Updated: 2021/10/31 15:58:02 by fmota            ###   ########.fr       */
+/*   Updated: 2021/10/31 17:08:59 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	converter(char **str, int **nb)
 	return (ret);
 }
 
-void	checker(char **argv)
+void	check(char **argv)
 {
 	int	index;
 

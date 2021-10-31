@@ -1,50 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_2.c                                          :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 11:54:03 by fmota             #+#    #+#             */
-/*   Updated: 2021/10/31 13:15:24 by fmota            ###   ########.fr       */
+/*   Created: 2021/02/08 19:18:09 by fmota             #+#    #+#             */
+/*   Updated: 2021/10/31 16:47:30 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-int	ft_lstsize(t_list *lst)
-{
-	int	ret;
-
-	ret = 0;
-	while (lst && ++ret)
-		lst = lst->next;
-	return (ret);
-}
-
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	new->next = *lst;
-	*lst = new;
-}
-
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*tmp;
-
-	tmp = ft_lstlast(*lst);
-	if (!tmp)
-		*lst = new;
-	else
-		tmp->next = new;
-}
-
-int	ft_abs(int num)
-{
-	if (num < 0)
-		return (-num);
-	return (num);
-}
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

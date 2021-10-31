@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils_4.c                                          :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 15:41:47 by fmota             #+#    #+#             */
-/*   Updated: 2021/10/31 15:48:57 by fmota            ###   ########.fr       */
+/*   Created: 2021/02/10 14:23:05 by fmota             #+#    #+#             */
+/*   Updated: 2021/10/31 16:50:19 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
 static size_t	ft_toklen(const char *s, char c)
 {
@@ -57,50 +57,4 @@ char	**ft_split(const char *s, char c)
 	}
 	ret[i] = 0;
 	return (ret);
-}
-
-t_list	*ft_lstnew(void *content)
-{
-	t_list	*ret;
-
-	ret = malloc(sizeof(t_list));
-	if (!ret)
-		return (0);
-	ret->content = content;
-	ret->next = 0;
-	return (ret);
-}
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
-{
-	size_t	i;
-
-	i = 0;
-	if (!dst && !src)
-		return (0);
-	while (*src && i + 1 < dstsize)
-	{
-		*dst++ = *src++;
-		++i;
-	}
-	if (i < dstsize)
-		*dst = 0;
-	while (*src++)
-		++i;
-	return (i);
-}
-
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
-{
-	size_t	i;
-	size_t	ret;
-
-	i = 0;
-	while (*dst && i < dstsize)
-	{
-		++dst;
-		++i;
-	}
-	ret = ft_strlcpy(dst, src, dstsize - i);
-	return (ret + i);
 }

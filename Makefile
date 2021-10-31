@@ -1,11 +1,11 @@
 NAME = push_swap
 BNAME = checker
 SOURCES = \
-	push_swap.c utils.c utils_2.c utils_3.c utils_4.c utils_5.c certify.c guidelines.c sort_out.c sort_out_utils.c \
+	push_swap.c libft_utils.c certify.c guidelines.c sort_out.c sort_out_utils.c \
 	sort_out_utils_2.c
 BSOURCES = \
-	checker.c utils.c utils_2.c utils_3.c utils_4.c utils_5.c certify.c guidelines.c sort_out.c sort_out_utils.c \
-	sort_out_utils_2.c get_next_line.c
+	checker.c libft_utils.c certify.c guidelines.c sort_out_utils.c \
+	get_next_line.c
 OBJECTS = $(SOURCES:.c=.o)
 BOBJECTS = $(BSOURCES:.c=.o)
 
