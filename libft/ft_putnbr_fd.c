@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmota <fmota@student.42lisboa.com>         +#+  +:+       +#+        */
+/*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 13:21:31 by fmota             #+#    #+#             */
-/*   Updated: 2021/02/15 13:21:31 by fmota            ###   ########.fr       */
+/*   Updated: 2021/10/31 17:39:16 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	if (n == -2147483648)
 		return (ft_putstr_fd("-2147483648", fd));

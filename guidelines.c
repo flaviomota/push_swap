@@ -6,7 +6,7 @@
 /*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 12:54:41 by fmota             #+#    #+#             */
-/*   Updated: 2021/10/31 13:15:56 by fmota            ###   ########.fr       */
+/*   Updated: 2021/10/31 18:00:52 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static void	rrx(t_list **stack1, t_list **stack2)
 	}
 }
 
-void    process_guidelines(char *cmd, t_list **stack1, t_list **stack2, int nb)
+void	process_guidelines(char *cmd, t_list **stack1, t_list **stack2, int nb)
 {
 	const int	len = ft_strlen(cmd);
 	int			tmp;

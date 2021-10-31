@@ -6,7 +6,7 @@
 /*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:21:09 by fmota             #+#    #+#             */
-/*   Updated: 2021/10/31 17:18:15 by fmota            ###   ########.fr       */
+/*   Updated: 2021/10/31 17:49:42 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,25 @@
 # include <unistd.h>
 # include <string.h>
 # include <limits.h>
+# include <stddef.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
-}					t_list;
+}				t_list;
 
-int					ft_intlen(int nb, int base);
 int					ft_abs(int num);
-int					ft_uintlen(unsigned int nb, int base);
-char				*ft_uitoa(unsigned long long int nb, int base);
-char				*ft_uitoa_base(unsigned long long int nb, int base);
 char				*ft_itoa(int n);
 char				**ft_split(const char *s, char c);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strdup(const char *s1);
 char				*ft_strjoin(const char *s1, const char *s2);
-char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char				*ft_strnstr(const char *haystack, const char *needle,
-								size_t len);
+						size_t len);
 char				*ft_strrchr(const char *s, int c);
-char				*ft_strtrim(char const *s1, char const *set);
+char				*ft_strtrim(const char *s1, const char *set);
 char				*ft_substr(const char *s, unsigned int start, size_t len);
 int					ft_atoi(const char *str);
 int					ft_isalnum(int c);
@@ -72,8 +69,8 @@ size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t				ft_strlen(const char *s);
 t_list				*ft_lstlast(t_list *lst);
-t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
-								void (*del)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)
+						(void *));
 t_list				*ft_lstnew(void *content);
 
 #endif

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmota <fmota@student.42lisboa.com>         +#+  +:+       +#+        */
+/*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 12:34:44 by fmota             #+#    #+#             */
-/*   Updated: 2021/02/10 12:34:44 by fmota            ###   ########.fr       */
+/*   Updated: 2021/10/31 17:32:25 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_toupper(int c)
+int	ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		c = c - 32;

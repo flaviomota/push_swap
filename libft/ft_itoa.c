@@ -3,49 +3,37 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fmota <fmota@student.42lisboa.com>         +#+  +:+       +#+        */
+/*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 12:46:53 by fmota             #+#    #+#             */
-/*   Updated: 2021/02/15 12:46:53 by fmota            ###   ########.fr       */
+/*   Updated: 2021/10/31 17:48:06 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void ft_itoa_negative(int *x, int *neg)
+char	*ft_itoa(int n)
 {
-	if (*x < 0)
-	{
-		*x *= -1;
-		*neg = 1;
-	}
-}
+	int			len;
+	char		*ret;
+	const char	*digits = "0123456789";
 
-char *ft_itoa(int n)
-{
-	int tmp;
-	int len;
-	int neg;
-	char *str;
-
-	if (n == -2147483648)
-		return (ft_strdup("-2147483648"));
-	tmp = n;
-	len = 2;
-	neg = 0;
-	ft_itoa_negative(&n, &neg);
-	while (tmp /= 10)
-		len++;
-	len += neg;
-	if ((str = (char *)malloc(sizeof(char) * len)) == NULL)
-		return (NULL);
-	str[--len] = '\0';
-	while (len--)
+	len = ft_numlen(n, 10);
+	ret = malloc(len + 1);
+	if (!ret)
+		return (0);
+	ret[len] = 0;
+	if (n == 0)
+		ret[0] = '0';
+	if (n < 0)
+		ret[0] = '-';
+	while (n)
 	{
-		str[len] = n % 10 + '0';
-		n = n / 10;
+		if (n > 0)
+			ret[--len] = digits[n % 10];
+		else
+			ret[--len] = digits[n % 10 * -1];
+		n /= 10;
 	}
-	if (neg)
-		str[0] = '-';
-	return (str);
+	return (ret);
 }

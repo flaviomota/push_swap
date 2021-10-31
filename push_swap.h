@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/31 11:55:14 by fmota             #+#    #+#             */
-/*   Updated: 2021/10/31 17:17:21 by fmota            ###   ########.fr       */
+/*   Created: 2021/10/31 17:59:12 by fmota             #+#    #+#             */
+/*   Updated: 2021/10/31 18:06:52 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP
-# define PUSH_SWAP
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include <stdlib.h>
 # include <unistd.h>
@@ -26,10 +26,11 @@ int			ft_isint(char *str);
 char		*ft_join(char **strs, char *sep);
 
 /* --- gnl --- */
-char	    *get_next_line(char **maker);
+char		*get_next_line(char **maker);
 
 /* --- guidelines --- */
-void    	process_guidelines(char *cmd, t_list **stack1, t_list **stack2, int nb);
+void		process_guidelines(char *cmd, t_list **stack1, t_list **stack2,
+				int nb);
 
 /* --- sort_out --- */
 void		sort(t_list **stack);

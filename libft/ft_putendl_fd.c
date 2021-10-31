@@ -6,13 +6,13 @@
 /*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 13:19:00 by fmota             #+#    #+#             */
-/*   Updated: 2021/10/31 16:57:10 by fmota            ###   ########.fr       */
+/*   Updated: 2021/10/31 17:39:30 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);

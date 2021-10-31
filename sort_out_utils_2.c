@@ -6,7 +6,7 @@
 /*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 13:24:18 by fmota             #+#    #+#             */
-/*   Updated: 2021/10/31 14:38:51 by fmota            ###   ########.fr       */
+/*   Updated: 2021/10/31 17:52:57 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,17 +94,22 @@ void	rotate_same(t_list **stack1, t_list **stack2, int nb1, int nb2)
 	{
 		process_guidelines("rr", stack1, stack2, min(ft_abs(nb1), ft_abs(nb2)));
 		if (ft_abs(nb1) <= ft_abs(nb2))
-			process_guidelines("rb", stack2, 0, ft_abs(ft_abs(nb1) - ft_abs(nb2)));
+			process_guidelines("rb", stack2, 0, ft_abs(ft_abs(nb1)
+					- ft_abs(nb2)));
 		else
-			process_guidelines("ra", stack1, 0, ft_abs(ft_abs(nb1) - ft_abs(nb2)));
+			process_guidelines("ra", stack1, 0, ft_abs(ft_abs(nb1)
+					- ft_abs(nb2)));
 	}
 	else
 	{
-		process_guidelines("rrr", stack1, stack2, min(ft_abs(nb1), ft_abs(nb2)));
+		process_guidelines("rrr", stack1, stack2, min(ft_abs(nb1),
+				ft_abs(nb2)));
 		if (ft_abs(nb1) <= ft_abs(nb2))
-			process_guidelines("rrb", stack2, 0, ft_abs(ft_abs(nb1) - ft_abs(nb2)));
+			process_guidelines("rrb", stack2, 0, ft_abs(ft_abs(nb1)
+					- ft_abs(nb2)));
 		else
-			process_guidelines("rra", stack1, 0, ft_abs(ft_abs(nb1) - ft_abs(nb2)));
+			process_guidelines("rra", stack1, 0, ft_abs(ft_abs(nb1)
+					- ft_abs(nb2)));
 	}
 }
 
