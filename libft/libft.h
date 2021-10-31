@@ -6,7 +6,7 @@
 /*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 16:21:09 by fmota             #+#    #+#             */
-/*   Updated: 2021/10/31 17:49:42 by fmota            ###   ########.fr       */
+/*   Updated: 2021/10/31 18:12:20 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ char				*ft_strmapi(const char *s, char (*f)(unsigned int, char));
 char				*ft_strnstr(const char *haystack, const char *needle,
 						size_t len);
 char				*ft_strrchr(const char *s, int c);
+int					ft_numlen(int n, int base);
 char				*ft_strtrim(const char *s1, const char *set);
 char				*ft_substr(const char *s, unsigned int start, size_t len);
 int					ft_atoi(const char *str);
