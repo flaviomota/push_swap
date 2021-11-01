@@ -6,7 +6,7 @@
 /*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 15:20:55 by fmota             #+#    #+#             */
-/*   Updated: 2021/10/31 18:00:04 by fmota            ###   ########.fr       */
+/*   Updated: 2021/11/01 09:14:24 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ int	main(int argc, char **argv)
 
 	if (argc > 1)
 	{
-		checker(argv + 1);
+		check(argv + 1);
 		str = ft_join(argv + 1, " ");
 		str2 = ft_split(str, ' ');
 		nb = 0;

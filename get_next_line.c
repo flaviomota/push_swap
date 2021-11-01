@@ -6,7 +6,7 @@
 /*   By: fmota <fmota@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/31 12:03:37 by fmota             #+#    #+#             */
-/*   Updated: 2021/10/31 15:56:30 by fmota            ###   ########.fr       */
+/*   Updated: 2021/11/01 09:15:44 by fmota            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,6 @@ char	*get_next_line(char **maker)
 	buf = malloc(BUFFER_SIZE + 1);
 	if (!buf)
 		return (0);
-	gnl_reader(buf, maker);
+	gnl_read(buf, maker);
 	return (gnl_development(maker));
 }

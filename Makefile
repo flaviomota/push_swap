@@ -1,35 +1,78 @@
-NAME = push_swap
-BNAME = checker
-SOURCES = \
-	push_swap.c libft_utils.c certify.c guidelines.c sort_out.c sort_out_utils.c \
-	sort_out_utils_2.c
-BSOURCES = \
-	checker.c libft_utils.c certify.c guidelines.c sort_out_utils.c \
-	get_next_line.c
-OBJECTS = $(SOURCES:.c=.o)
-BOBJECTS = $(BSOURCES:.c=.o)
+# --- push swap --- #
+NAME	=	push_swap
+SRC_A	=	push_swap.c \
+			libft_utils.c \
+			certify.c \
+			guidelines.c \
+			sort_out.c \
+			sort_out_utils.c \
+			sort_out_utils_2.c \
 
-all: $(NAME)
+# --- checker --- #
+CHECKER	=	checker
+SRC_B	=	checker.c \
+			libft_utils.c \
+			certify.c \
+			guidelines.c \
+			sort_out.c \
+			sort_out_utils.c \
+			sort_out_utils_2.c \
+			get_next_line.c
 
-$(NAME): $(OBJECTS) libft
-	gcc -o $@ $(OBJECTS) -Llibft -lft
+# --- libft --- #
+LIBFT		=	./libft/libft.a
+LIBFT_DIR	=	./libft
 
-bonus: $(BOBJECTS) libft
-	gcc -o $(BNAME) $(BOBJECTS) -Llibft -lft
+# --- INC --- #
+INC		=	-Iincludes -I$(LIBFT_DIR) -I$(LIBFT_DIR)/stack \
+			-I$(LIBFT_DIR)/get_next_line
 
-%.o: %.c
-	gcc -c -Wall -Wextra -Werror $?
+# --- compiling --- #
+CC		=	gcc
+CFLAG	=	-Wall -Wextra -Werror
+CLIB	=	ar -rc
+RM		=	rm -f
 
-libft:
-	make bonus -C libft
+# -- colors --- #
+GREEN		=	\e[38;5;118m
+YELLOW		=	\e[38;5;226m
+RESET		=	\e[0m
+_SUCCESS	=	[$(GREEN)SUCCESS$(RESET)]
+_INFO		=	[$(YELLOW)INFO$(RESET)]
+
+# --- debugger --- #
+ifeq ($(DEBUG), 1)
+	D_FLAG	=	-g
+endif
+
+# --- fsanitize --- #
+ifeq ($(SANITIZE), 1)
+D_FLAG	=	-fsanitize=address -g
+endif
+
+mandatory:	$(NAME)
+bonus:		$(CHECKER)
+
+$(NAME):
+	@ $(MAKE) DEBUG=$(DEBUG) -C ./libft
+	@ $(CC) $(CFLAG) $(D_FLAG) $(SRC_A) $(INC) $(LIBFT) -o $(NAME)
+	@printf "$(_SUCCESS) push_swap ready.\n"
+
+all:		$(NAME) $(CHECKER)
+
+$(CHECKER):
+	@ $(MAKE) DEBUG=$(DEBUG) -C ./libft
+	@ $(CC) $(CFLAG) $(D_FLAG) $(SRC_B) $(INC) $(LIBFT) -o $(CHECKER)
+	@printf "$(_SUCCESS) checker ready.\n"
 
 clean:
-	rm -f $(OBJECTS) $(BOBJECTS)
-	make -C libft clean
+	@ $(MAKE) fclean -C $(LIBFT_DIR)
 
-fclean: clean
-	rm -f $(NAME) $(BNAME) libft/libft.a
+fclean:
+	@ $(RM) $(NAME) $(CHECKER)
+	@ $(MAKE) fclean -C $(LIBFT_DIR)
+	@printf "$(_INFO) push_swap and checker.\n"
 
 re: fclean all
 
-.PHONY: all libft clean fclean re
+PHONY: all clean fclean re mandatory bonus
